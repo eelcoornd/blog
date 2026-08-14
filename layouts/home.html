@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <h1>{{ site.Title }}</h1>
+  <p class="intro">{{ site.Params.description }}</p>
+  {{ range .Site.Sections }}
+    <section>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ range first 3 .Pages }}
+        <article>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+          <p>{{ .Summary }}</p>
+        </article>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}

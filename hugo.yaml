@@ -1,0 +1,5 @@
+baseURL: https://blog.orn-dijkstra.no/
+languageCode: en
+title: Orn-Dijkstra
+params:
+  description: Notes about work, technology, and life.

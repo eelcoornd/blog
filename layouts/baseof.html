@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.Params.description }}">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">{{ site.Title }}</a>
+    <nav aria-label="Main navigation">
+      <a href="/work/">Work</a>
+      <a href="/personal/">Personal</a>
+    </nav>
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer>© {{ now.Year }} {{ site.Title }}</footer>
+</body>
+</html>
