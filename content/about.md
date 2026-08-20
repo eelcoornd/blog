@@ -19,3 +19,10 @@ Originally from the Netherlands, I speak Dutch, Norwegian, English and German
 (with some French and Spanish — and Frisian).
 
 Find me on [LinkedIn](https://www.linkedin.com/in/eelcodykstra/).
+
+## Certifications
+
+My verified badges — see them all on
+[Credly](https://www.credly.com/users/eelco-orn-dijkstra.64d97323/badges).
+
+{{< badges >}}

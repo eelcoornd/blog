@@ -1,0 +1,9 @@
+{{/* Renders the Credly badge grid from data/badges.yaml */}}
+<div class="badges">
+  {{ range site.Data.badges }}
+    <a class="badge" href="{{ .url }}" target="_blank" rel="noopener"
+       title="{{ .name }} — {{ replace .issuer "issued by " "" }} ({{ .date }})">
+      <img loading="lazy" src="{{ .img }}" alt="{{ .name }}" width="96" height="96">
+    </a>
+  {{ end }}
+</div>
