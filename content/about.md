@@ -10,11 +10,6 @@ backup and data resiliency**. Day to day I work with DELL, HPE, Lenovo, IBM,
 Hitachi, Nutanix, NetApp, Pure Storage, Veeam, Rubrik, Cohesity, Veritas and
 VMware.
 
-Before Atea I was a Service Delivery / Technical Account Manager and Senior
-Systems Engineer at **Proact IT Norge**, a **Network Storage Analyst** for
-**ConocoPhillips** (EMEA storage infrastructure), and held project management
-and technical sales roles at **Hewlett Packard Enterprise**.
-
 Originally from the Netherlands, I speak Frisian, Dutch, Norwegian, English
 and German (with some French and Spanish).
 
