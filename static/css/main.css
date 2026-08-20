@@ -119,32 +119,21 @@ header nav { display: flex; gap: 1.25rem; }
 .rail a.mini-term {
   display: block;
   margin-top: 1.5rem;
-  padding: 0.6rem 0.7rem 0.7rem;
-  background: #0c0f12;
+  padding: 0.7rem 0.8rem;
+  background: #000;
   border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 1px 3px rgba(0,0,0,.3);
   transition: transform .12s ease;
 }
-.rail a.mini-term:hover { background: #0c0f12; transform: translateY(-2px); }
-.mini-term .dots { display: flex; gap: 5px; margin-bottom: 0.5rem; }
-.mini-term .dots i { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; }
-.mini-term .dots i:nth-child(2) { background: #febc2e; }
-.mini-term .dots i:nth-child(3) { background: #28c840; }
+.rail a.mini-term:hover { background: #000; transform: translateY(-2px); }
 .mini-term code {
   display: block;
-  font: 12px/1.5 "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font: 13px/1.4 "SF Mono", ui-monospace, Menlo, Consolas, monospace;
   color: #e6e6e6;
 }
 .mini-term .ps { color: #38bcc0; }
-.mini-term .ok { color: #38bcc0; }
-.mini-term .blink { animation: blink 1s step-end infinite; }
-.mini-term .hint {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.72rem;
-  color: #38bcc0;
-}
+.mini-term .blink { color: #38bcc0; animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
 /* Content (right) */
