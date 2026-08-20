@@ -1,0 +1,24 @@
+# Dummy topics for the left icon rail.
+# Edit freely later. `icon` maps to an inline SVG in layouts/partials/sidebar.html.
+# `url` can point anywhere (a section, a tag page, an external link).
+- title: Home
+  icon: home
+  url: /
+- title: Work
+  icon: briefcase
+  url: /work/
+- title: Personal
+  icon: user
+  url: /personal/
+- title: Projects
+  icon: rocket
+  url: /projects/
+- title: Notes
+  icon: note
+  url: /notes/
+- title: Photos
+  icon: image
+  url: /photos/
+- title: About
+  icon: info
+  url: /about/

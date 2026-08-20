@@ -15,7 +15,10 @@
       <a href="/personal/">Personal</a>
     </nav>
   </header>
-  <main>{{ block "main" . }}{{ end }}</main>
+  <div class="layout">
+    {{ partial "sidebar.html" . }}
+    <main>{{ block "main" . }}{{ end }}</main>
+  </div>
   <footer>© {{ now.Year }} {{ site.Title }}</footer>
 </body>
 </html>
