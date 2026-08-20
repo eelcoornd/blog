@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eelco Ørn-Dijkstra — terminal</title>
+<style>
+  :root { --fg:#e6e6e6; --bg:#0c0f12; --accent:#38bcc0; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+    font:15px/1.5 "SF Mono",ui-monospace,Menlo,Consolas,monospace; }
+  #screen { padding:1rem; min-height:100vh; box-sizing:border-box; }
+  a { color:var(--accent); }
+  .accent { color:var(--accent); }
+  .err { color:#ff5c5c; }
+  #out b { color:var(--accent); }
+  #line { display:flex; }
+  #line .ps { color:var(--accent); white-space:pre; }
+  #in { background:transparent; border:0; color:var(--fg); font:inherit;
+    flex:1; outline:none; caret-color:var(--accent); }
+  pre { margin:0; white-space:pre-wrap; word-break:break-word; }
+</style>
+</head>
+<body onclick="inp.focus()">
+<div id="screen">
+  <div id="out"></div>
+  <div id="line"><span class="ps">eelco@orn-dijkstra:~$&nbsp;</span><input id="in" autofocus autocomplete="off" spellcheck="false"></div>
+</div>
+<script>
+const out = document.getElementById('out'), inp = document.getElementById('in');
+const banner = String.raw`
+       _
+  ___ | | ___ ___
+ / _ \| |/ __/ _ \    Eelco Ørn-Dijkstra
+|  __/| | (_| (_) |   Principal Consultant · Hybrid Datacenter
+ \___||_|\___\___/    Atea Norge AS · Stavanger, Norway
+
+Type 'help' to get started.`;
+
+const cmds = {
+  help: () => `Available commands:
+  <b>about</b>      who I am
+  <b>work</b>       what I do
+  <b>skills</b>     tech I work with
+  <b>social</b>     where to find me
+  <b>badges</b>     my certifications (Credly)
+  <b>blog</b>       back to the blog
+  <b>clear</b>      clear the screen`,
+  about: () => `I'm Eelco Ørn-Dijkstra — Principal Consultant, Hybrid Datacenter at Atea
+Norge AS, based in the Stavanger area, Norway. 20+ years in enterprise IT:
+hybrid datacenter, storage, backup and data resiliency. Originally from the
+Netherlands; I speak Frisian, Dutch, Norwegian, English and German.`,
+  work: () => `Sjefskonsulent Hybrid Datacenter @ Atea Norge AS.
+Before: Proact IT Norge, ConocoPhillips (EMEA storage), Hewlett Packard Enterprise.
+See posts: <a href="/work/">/work/</a>`,
+  skills: () => `DELL · HPE · Lenovo · IBM · Hitachi · Nutanix · NetApp · Pure Storage
+Veeam · Rubrik · Cohesity · Veritas · VMware · Terraform · Ansible`,
+  social: () => `linkedin   <a href="https://www.linkedin.com/in/eelcodykstra/" target="_blank">linkedin/eelcodykstra</a>
+credly     <a href="https://www.credly.com/users/eelco-orn-dijkstra.64d97323/badges" target="_blank">credly/eelco-orn-dijkstra</a>`,
+  badges: () => `See my verified badges: <a href="/about/#certifications" >/about/</a>
+or on Credly: <a href="https://www.credly.com/users/eelco-orn-dijkstra.64d97323/badges" target="_blank">credly.com</a>`,
+  blog: () => { location.href = '/'; return 'Going home…'; },
+  clear: () => { out.innerHTML = ''; return ''; },
+};
+
+function print(html, cls) {
+  const p = document.createElement('pre');
+  if (cls) p.className = cls;
+  p.innerHTML = html;
+  out.appendChild(p);
+}
+function typeBanner(text, i=0) {
+  if (i > text.length) return;
+  out.firstChild ? out.firstChild.innerHTML = text.slice(0,i)
+                 : print(text.slice(0,i));
+  setTimeout(() => typeBanner(text, i+1), 6);
+}
+
+const history = []; let hi = 0;
+inp.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const raw = inp.value.trim(); inp.value = '';
+    print('<span class="accent">eelco@orn-dijkstra:~$</span> ' + escapeHtml(raw));
+    if (raw) { history.push(raw); hi = history.length; }
+    const fn = cmds[raw.toLowerCase()];
+    if (raw === '') {}
+    else if (fn) { const r = fn(); if (r) print(r); }
+    else print(`command not found: ${escapeHtml(raw)}. Try 'help'.`, 'err');
+    window.scrollTo(0, document.body.scrollHeight);
+  } else if (e.key === 'ArrowUp') {
+    if (hi > 0) inp.value = history[--hi]; e.preventDefault();
+  } else if (e.key === 'ArrowDown') {
+    if (hi < history.length - 1) inp.value = history[++hi];
+    else { hi = history.length; inp.value = ''; }
+    e.preventDefault();
+  }
+});
+function escapeHtml(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+typeBanner(banner);
+</script>
+</body>
+</html>
