@@ -1,6 +1,6 @@
 baseURL: https://blog.orn-dijkstra.no/
 languageCode: en
-title: Orn-Dijkstra
+title: Eelco Ørn-Dijkstra
 params:
-  description: Notes about work, technology, and life.
+  description: Hybrid datacenter, storage & backup — notes from work, homelab and life.
   linkedin: https://www.linkedin.com/in/eelcodykstra/

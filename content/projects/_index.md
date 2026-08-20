@@ -2,4 +2,5 @@
 title: Projects
 ---
 
-Dummy projects section. Posts for this topic will appear here.
+Things I build and tinker with outside the datacenter — self-hosting, home
+automation, and a homelab that runs local AI.

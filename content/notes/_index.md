@@ -2,4 +2,5 @@
 title: Notes
 ---
 
-Dummy notes section. Posts for this topic will appear here.
+Short technical notes — storage, backup, virtualization and the occasional
+homelab experiment.
