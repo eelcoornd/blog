@@ -139,6 +139,15 @@ footer {
   padding: 2rem 1.5rem;
   text-align: center;
 }
+footer p { margin: 0 0 0.5rem; }
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #0a66c2; /* LinkedIn blue */
+}
+.social:hover { text-decoration: underline; }
 
 /* Mobile: rail becomes a scrollable icon row on top */
 @media (max-width: 48rem) {
