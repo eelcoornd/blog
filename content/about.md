@@ -15,8 +15,8 @@ Systems Engineer at **Proact IT Norge**, a **Network Storage Analyst** for
 **ConocoPhillips** (EMEA storage infrastructure), and held project management
 and technical sales roles at **Hewlett Packard Enterprise**.
 
-Originally from the Netherlands, I speak Dutch, Norwegian, English and German
-(with some French and Spanish — and Frisian).
+Originally from the Netherlands, I speak Frisian, Dutch, Norwegian, English
+and German (with some French and Spanish).
 
 Find me on [LinkedIn](https://www.linkedin.com/in/eelcodykstra/).
 
