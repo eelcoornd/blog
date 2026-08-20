@@ -38,9 +38,8 @@ header {
   z-index: 10;
 }
 header nav { display: flex; gap: 1.25rem; }
-.brand { font-weight: 700; text-decoration: none; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 0.6rem; }
-.brand-house { height: 40px; width: auto; display: block; }
-.brand-logo { height: 34px; width: auto; display: block; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand-logo { height: 56px; width: auto; display: block; }
 
 /* Two-column layout: icon rail + content */
 .layout {
