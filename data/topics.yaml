@@ -1,24 +1,31 @@
 # Dummy topics for the left icon rail.
-# Edit freely later. `icon` maps to an inline SVG in layouts/partials/sidebar.html.
-# `url` can point anywhere (a section, a tag page, an external link).
+# `icon` maps to an inline SVG in layouts/partials/sidebar.html.
+# `color` tints the Windows-style icon tile. `url` can point anywhere.
 - title: Home
   icon: home
+  color: "#0078d4"
   url: /
 - title: Work
   icon: briefcase
+  color: "#8764b8"
   url: /work/
 - title: Personal
   icon: user
+  color: "#00b7c3"
   url: /personal/
 - title: Projects
   icon: rocket
+  color: "#ff8c00"
   url: /projects/
 - title: Notes
   icon: note
+  color: "#e3008c"
   url: /notes/
 - title: Photos
   icon: image
+  color: "#107c10"
   url: /photos/
 - title: About
   icon: info
+  color: "#5d5a58"
   url: /about/

@@ -10,15 +10,29 @@
   "info"      "<circle cx='12' cy='12' r='9'/><path d='M12 11v5M12 8h.01'/>"
 }}
 <aside class="rail" aria-label="Topics">
+  <div class="rail-head">
+    <img class="avatar" src="/img/avatar.svg" alt="" width="72" height="72">
+    {{/* ponytail: static search box, wire AI backend later */}}
+    <form class="search" role="search" action="/search/" method="get">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+      </svg>
+      <input type="search" name="q" placeholder="Search…" aria-label="Search">
+    </form>
+  </div>
   <ul>
     {{ range site.Data.topics }}
       {{ $active := or (eq $.RelPermalink .url) (and (ne .url "/") (hasPrefix $.RelPermalink .url)) }}
       <li>
-        <a href="{{ .url }}"{{ if $active }} class="active" aria-current="page"{{ end }}>
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            {{ index $icons .icon | safeHTML }}
-          </svg>
+        <a href="{{ .url }}"{{ if $active }} class="active" aria-current="page"{{ end }}
+           style="--c: {{ .color | default "#0078d4" }}">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              {{ index $icons .icon | safeHTML }}
+            </svg>
+          </span>
           <span>{{ .title }}</span>
         </a>
       </li>
